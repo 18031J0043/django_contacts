@@ -62,7 +62,7 @@ img {
 .card-header {
   font-size: 18px;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 .header-link:hover {
   text-decoration: none;

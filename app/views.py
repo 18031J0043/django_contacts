@@ -23,6 +23,11 @@ from django.contrib import messages
 #     return render (request,'detail.html',context)
 
 
+def PageView(request):
+    return render(request, 'spot.html')
+
+
+
 class HomePageView(LoginRequiredMixin,ListView):
     template_name='index.html'
     model=Contact
