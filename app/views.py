@@ -9,6 +9,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib import messages
+import pyrebase
+
 # Create your views here.
 # def home(request):
 #     context={
@@ -22,9 +24,39 @@ from django.contrib import messages
 #     }
 #     return render (request,'detail.html',context)
 
+Config = {
+    'apiKey': "AIzaSyDqixuuv9s9wTuGyPYg7aPkp4t1SPpSUZI",
+    'authDomain': "spotme-cadbd.firebaseapp.com",
+    'databaseURL': "https://spotme-cadbd.firebaseio.com",
+    'projectId': "spotme-cadbd",
+    'storageBucket': "spotme-cadbd.appspot.com",
+    'messagingSenderId': "310507672139",
+    'appId': "1:310507672139:web:d25515d874640bfbe933ce",
+    'measurementId': "G-R04HBJKRJM"
+}
 
 def PageView(request):
     return render(request, 'spot.html')
+
+
+def MainView(request):
+    return render(request, 'home.html')
+    
+
+def AboutUsView(request):
+    return render(request, 'aboutus.html')
+
+
+def ImportentinfoView(request):
+    return render(request, 'importentinfo.html')
+
+
+def ContactUsView(request):
+    return render(request, 'contactus.html')
+
+
+def AbouticssrView(request):
+    return render(request, 'abouticssr.html')
 
 
 
@@ -104,3 +136,7 @@ class SignUpView(CreateView):
     form_class = UserCreationForm
     template_name = 'registration/signup.html'
     success_url = reverse_lazy('home')
+
+
+firebase=pyrebase.initialize_app(Config)
+auth=firebase.auth()

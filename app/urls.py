@@ -3,7 +3,12 @@ from .import views
 
 urlpatterns=[
     # path('',views.home,name="home"),
-    path('', views.PageView, name=""),
+    path('spot', views.PageView, name="spot"),
+    path('',views.MainView,name=""),
+    path('aboutus', views.AboutUsView, name="aboutus"),
+    path('importentinfo', views.ImportentinfoView, name="importentinfo"),
+    path('contactus', views.ContactUsView, name="contactus"),
+    path('abouticssr', views.AbouticssrView, name="abouticssr"),
     path('home', views.HomePageView.as_view(), name="home"),
     # path('detail/<int:id>/',views.detail,name="detail"),
     path('detail/<int:pk>/', views.ContactDetailView.as_view(), name="detail"),
